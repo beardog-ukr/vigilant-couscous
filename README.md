@@ -1,4 +1,4 @@
 # vigilant-couscous
-Examples of the format options used by uncrustify tool
+reserved
 
 Basic readme
