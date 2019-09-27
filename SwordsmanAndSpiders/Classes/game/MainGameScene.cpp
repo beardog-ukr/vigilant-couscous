@@ -1,10 +1,15 @@
 #include "MainGameScene.h"
+#include "game/GameMapNode.h"
+
+
 #include "SimpleAudioEngine.h"
 
 using namespace cocos2d;
 using namespace std;
 
 static const string backgroundImageFileName = "ui/Background_Large3.png";
+static const string spiderImageFileName     = "spider/sliced002.png";
+static const string warriorImageFileName    = "warrior/knight_iso_char_slice_left_1.png";
 
 // --- --------------------------------------------------------------------
 
@@ -35,6 +40,11 @@ bool MainGameScene::init()
 
   // --- keyboard
   if (!initTiledMap()) {
+    return false;
+  }
+
+  // --- keyboard
+  if (!initDebug()) {
     return false;
   }
 
@@ -74,6 +84,70 @@ bool MainGameScene::initBackground() {
 
 // --- --------------------------------------------------------------------
 
+bool MainGameScene::initDebug() {
+  log("%s: here", __func__);
+  Sprite *sprite = Sprite::create(warriorImageFileName);
+
+  if (sprite == nullptr) {
+    log("%s: failed to load %s file", __func__, warriorImageFileName.c_str());
+    return false;
+  }
+
+  // --- else
+
+  // position the sprite on the center of the screen
+  const Size visibleSize = Director::getInstance()->getVisibleSize();
+  const Vec2 origin      = Director::getInstance()->getVisibleOrigin();
+
+  sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x - 110,
+                           visibleSize.height / 2 + origin.y));
+
+  // add the sprite as a child to this layer
+  addChild(sprite, 0);
+
+  sprite = Sprite::create(spiderImageFileName);
+
+  if (sprite == nullptr) {
+    log("%s: failed to load %s file", __func__, spiderImageFileName.c_str());
+    return false;
+  }
+
+  // --- else
+  sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x + 120,
+                           visibleSize.height / 2 + origin.y));
+
+  // add the sprite as a child to this layer
+  addChild(sprite, 0);
+
+
+  auto closeItem = MenuItemImage::create(
+    "CloseNormal.png",
+    "CloseSelected.png",
+    CC_CALLBACK_1(MainGameScene::menuCloseCallback, this));
+
+  if ((closeItem == nullptr) ||
+      (closeItem->getContentSize().width <= 0) ||
+      (closeItem->getContentSize().height <= 0))
+  {
+    log("%s: failed to load 'CloseNormal.png CloseSelected.png' file", __func__);
+  }
+  else
+  {
+    float x = origin.x + visibleSize.width - closeItem->getContentSize().width / 2;
+    float y = origin.y + closeItem->getContentSize().height / 2;
+    closeItem->setPosition(Vec2(x, y));
+  }
+
+  // create menu, it's an autorelease object
+  auto menu = Menu::create(closeItem, NULL);
+  menu->setPosition(Vec2::ZERO);
+  this->addChild(menu);
+
+  return true;
+}
+
+// --- --------------------------------------------------------------------
+
 bool MainGameScene::initKeyboardProcessing() {
   log("%s: here", __func__);
 
@@ -83,9 +157,7 @@ bool MainGameScene::initKeyboardProcessing() {
 // --- --------------------------------------------------------------------
 
 bool MainGameScene::initTiledMap() {
-  const string mapFilename = "maps/m01.tmx";
-
-  mapNode =  TMXTiledMap::create(mapFilename);
+  mapNode =  GameMapNode::create();
 
   if (mapNode == nullptr)  {
     log("%s:failed to load tiled map.", __func__);
@@ -95,7 +167,7 @@ bool MainGameScene::initTiledMap() {
   const Size visibleSize = Director::getInstance()->getVisibleSize();
   const Vec2 origin      = Director::getInstance()->getVisibleOrigin();
 
-  mapNode->setAnchorPoint(Vec2(0.5, 0.5));
+  // mapNode->setAnchorPoint(Vec2(0.5, 0.5));
   mapNode->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
   addChild(mapNode);
 

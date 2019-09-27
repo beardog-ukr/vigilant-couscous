@@ -2,6 +2,8 @@
 
 #include "cocos2d.h"
 
+class GameMapNode;
+
 class MainGameScene : public cocos2d::Scene {
 public:
 
@@ -17,10 +19,12 @@ public:
 
 protected:
 
-  cocos2d::TMXTiledMap *mapNode;
+  GameMapNode *mapNode;
 
   bool initBackground();
 
   bool initKeyboardProcessing();
   bool initTiledMap();
+
+  bool initDebug();
 };
