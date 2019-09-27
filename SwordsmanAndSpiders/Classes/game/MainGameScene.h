@@ -17,7 +17,10 @@ public:
 
 protected:
 
+  cocos2d::TMXTiledMap *mapNode;
+
   bool initBackground();
 
   bool initKeyboardProcessing();
+  bool initTiledMap();
 };

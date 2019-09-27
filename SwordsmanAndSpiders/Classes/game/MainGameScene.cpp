@@ -34,6 +34,11 @@ bool MainGameScene::init()
   }
 
   // --- keyboard
+  if (!initTiledMap()) {
+    return false;
+  }
+
+  // --- keyboard
   if (!initKeyboardProcessing()) {
     return false;
   }
@@ -71,6 +76,28 @@ bool MainGameScene::initBackground() {
 
 bool MainGameScene::initKeyboardProcessing() {
   log("%s: here", __func__);
+
+  return true;
+}
+
+// --- --------------------------------------------------------------------
+
+bool MainGameScene::initTiledMap() {
+  const string mapFilename = "maps/m01.tmx";
+
+  mapNode =  TMXTiledMap::create(mapFilename);
+
+  if (mapNode == nullptr)  {
+    log("%s:failed to load tiled map.", __func__);
+    return false;
+  }
+
+  const Size visibleSize = Director::getInstance()->getVisibleSize();
+  const Vec2 origin      = Director::getInstance()->getVisibleOrigin();
+
+  mapNode->setAnchorPoint(Vec2(0.5, 0.5));
+  mapNode->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+  addChild(mapNode);
 
   return true;
 }
