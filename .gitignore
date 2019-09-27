@@ -1,0 +1,10 @@
+SwordsmanAndSpiders/.cocos-project.json
+SwordsmanAndSpiders/CMakeLists.txt
+SwordsmanAndSpiders/bin/
+SwordsmanAndSpiders/cocos2d/
+SwordsmanAndSpiders/linux-build/
+SwordsmanAndSpiders/proj.android/
+SwordsmanAndSpiders/proj.ios_mac/
+SwordsmanAndSpiders/proj.linux/
+SwordsmanAndSpiders/proj.win32/
+
