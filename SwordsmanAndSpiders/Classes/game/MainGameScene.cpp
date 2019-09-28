@@ -106,8 +106,12 @@ bool MainGameScene::initDebug() {
   const Size visibleSize = Director::getInstance()->getVisibleSize();
   const Vec2 origin      = Director::getInstance()->getVisibleOrigin();
 
-  sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x - 110,
-                           visibleSize.height / 2 + origin.y));
+  Vec2 wp = mapNode->getWarriorStartPos();
+  sprite->setPosition(wp);
+
+
+  // sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x - 110,
+  // visibleSize.height / 2 + origin.y));
 
   // add the sprite as a child to this layer
   addChild(sprite, 0);
@@ -120,8 +124,9 @@ bool MainGameScene::initDebug() {
   }
 
   // --- else
-  sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x + 120,
-                           visibleSize.height / 2 + origin.y));
+  // sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x + 120,
+  // visibleSize.height / 2 + origin.y));
+  sprite->setPosition(mapNode->getSpiderStartPos());
 
   // add the sprite as a child to this layer
   addChild(sprite, 0);
