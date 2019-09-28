@@ -214,7 +214,7 @@ void SixCatsLogger::f(const string                          & metaInfo,
 
 // --- ------------------------------------------------------------------------
 
-void c5c(SixCatsLogger *logger, const string message) {
+void c6c(SixCatsLogger *logger, const string message) {
   if (logger == 0) {
     return;
   }
@@ -224,7 +224,7 @@ void c5c(SixCatsLogger *logger, const string message) {
 
 // --- ------------------------------------------------------------------------
 
-void c5c(SixCatsLogger *logger, const string metaInfo, const string message)  {
+void c6c(SixCatsLogger *logger, const string metaInfo, const string message)  {
   if (logger == 0) {
     return;
   }
@@ -234,7 +234,7 @@ void c5c(SixCatsLogger *logger, const string metaInfo, const string message)  {
 
 // --- ------------------------------------------------------------------------
 
-void c5w(SixCatsLogger *logger, const string message) {
+void c6w(SixCatsLogger *logger, const string message) {
   if (logger == 0) {
     return;
   }
@@ -244,7 +244,7 @@ void c5w(SixCatsLogger *logger, const string message) {
 
 // --- ------------------------------------------------------------------------
 
-void c5w(SixCatsLogger *logger, const string metaInfo, const string message)  {
+void c6w(SixCatsLogger *logger, const string metaInfo, const string message)  {
   if (logger == 0) {
     return;
   }
@@ -254,7 +254,7 @@ void c5w(SixCatsLogger *logger, const string metaInfo, const string message)  {
 
 // --- ------------------------------------------------------------------------
 
-void c5i(SixCatsLogger *logger, const string message) {
+void c6i(SixCatsLogger *logger, const string message) {
   if (logger == 0) {
     return;
   }
@@ -264,7 +264,7 @@ void c5i(SixCatsLogger *logger, const string message) {
 
 // --- ------------------------------------------------------------------------
 
-void c5i(SixCatsLogger *logger, const string metaInfo, const string message)  {
+void c6i(SixCatsLogger *logger, const string metaInfo, const string message)  {
   if (logger == 0) {
     return;
   }
@@ -274,7 +274,7 @@ void c5i(SixCatsLogger *logger, const string metaInfo, const string message)  {
 
 // --- ------------------------------------------------------------------------
 
-void c5d(SixCatsLogger *logger, const string message) {
+void c6d(SixCatsLogger *logger, const string message) {
   if (logger == 0) {
     return;
   }
@@ -284,7 +284,7 @@ void c5d(SixCatsLogger *logger, const string message) {
 
 // --- ------------------------------------------------------------------------
 
-void c5d(SixCatsLogger *logger, const string metaInfo, const string message)  {
+void c6d(SixCatsLogger *logger, const string metaInfo, const string message)  {
   if (logger == 0) {
     return;
   }
@@ -294,7 +294,7 @@ void c5d(SixCatsLogger *logger, const string metaInfo, const string message)  {
 
 // --- ------------------------------------------------------------------------
 
-void c5t(SixCatsLogger *logger, const string message) {
+void c6t(SixCatsLogger *logger, const string message) {
   if (logger == 0) {
     return;
   }
@@ -304,7 +304,7 @@ void c5t(SixCatsLogger *logger, const string message) {
 
 // --- ------------------------------------------------------------------------
 
-void c5t(SixCatsLogger *logger, const string metaInfo, const string message)  {
+void c6t(SixCatsLogger *logger, const string metaInfo, const string message)  {
   if (logger == 0) {
     return;
   }
@@ -314,7 +314,7 @@ void c5t(SixCatsLogger *logger, const string metaInfo, const string message)  {
 
 // --- ------------------------------------------------------------------------
 
-void c5f(SixCatsLogger *logger, const string message) {
+void c6f(SixCatsLogger *logger, const string message) {
   if (logger == 0) {
     return;
   }
@@ -324,7 +324,7 @@ void c5f(SixCatsLogger *logger, const string message) {
 
 // --- ------------------------------------------------------------------------
 
-void c5f(SixCatsLogger *logger, const string metaInfo, const string message)  {
+void c6f(SixCatsLogger *logger, const string metaInfo, const string message)  {
   if (logger == 0) {
     return;
   }
@@ -334,7 +334,7 @@ void c5f(SixCatsLogger *logger, const string metaInfo, const string message)  {
 
 // --- ------------------------------------------------------------------------
 
-void c5c(SixCatsLogger                          *logger,
+void c6c(SixCatsLogger                          *logger,
          std::function<void(std::ostringstream&)>makeMessage) {
   if (logger == 0) {
     return;
@@ -343,7 +343,7 @@ void c5c(SixCatsLogger                          *logger,
   logger->c(makeMessage);
 }
 
-void c5w(SixCatsLogger *logger, std::function<void(std::ostringstream&)>makeMessage) {
+void c6w(SixCatsLogger *logger, std::function<void(std::ostringstream&)>makeMessage) {
   if (logger == 0) {
     return;
   }
@@ -351,7 +351,7 @@ void c5w(SixCatsLogger *logger, std::function<void(std::ostringstream&)>makeMess
   logger->w(makeMessage);
 }
 
-void c5i(SixCatsLogger *logger, std::function<void(std::ostringstream&)>makeMessage) {
+void c6i(SixCatsLogger *logger, std::function<void(std::ostringstream&)>makeMessage) {
   if (logger == 0) {
     return;
   }
@@ -359,7 +359,7 @@ void c5i(SixCatsLogger *logger, std::function<void(std::ostringstream&)>makeMess
   logger->i(makeMessage);
 }
 
-void c5d(SixCatsLogger *logger, std::function<void(std::ostringstream&)>makeMessage) {
+void c6d(SixCatsLogger *logger, std::function<void(std::ostringstream&)>makeMessage) {
   if (logger == 0) {
     return;
   }
@@ -367,7 +367,7 @@ void c5d(SixCatsLogger *logger, std::function<void(std::ostringstream&)>makeMess
   logger->d(makeMessage);
 }
 
-void c5t(SixCatsLogger *logger, std::function<void(std::ostringstream&)>makeMessage) {
+void c6t(SixCatsLogger *logger, std::function<void(std::ostringstream&)>makeMessage) {
   if (logger == 0) {
     return;
   }
@@ -375,7 +375,7 @@ void c5t(SixCatsLogger *logger, std::function<void(std::ostringstream&)>makeMess
   logger->t(makeMessage);
 }
 
-void c5f(SixCatsLogger *logger, std::function<void(std::ostringstream&)>makeMessage) {
+void c6f(SixCatsLogger *logger, std::function<void(std::ostringstream&)>makeMessage) {
   if (logger == 0) {
     return;
   }
@@ -385,7 +385,7 @@ void c5f(SixCatsLogger *logger, std::function<void(std::ostringstream&)>makeMess
 
 // --- ------------------------------------------------------------------------
 
-void c5c(SixCatsLogger *logger, const string metaInfo,
+void c6c(SixCatsLogger *logger, const string metaInfo,
          std::function<void(std::ostringstream&)>makeMessage) {
   if (logger == 0) {
     return;
@@ -394,7 +394,7 @@ void c5c(SixCatsLogger *logger, const string metaInfo,
   logger->c(metaInfo, makeMessage);
 }
 
-void c5w(SixCatsLogger *logger, const string metaInfo,
+void c6w(SixCatsLogger *logger, const string metaInfo,
          std::function<void(std::ostringstream&)>makeMessage) {
   if (logger == 0) {
     return;
@@ -403,7 +403,7 @@ void c5w(SixCatsLogger *logger, const string metaInfo,
   logger->w(metaInfo, makeMessage);
 }
 
-void c5i(SixCatsLogger *logger, const string metaInfo,
+void c6i(SixCatsLogger *logger, const string metaInfo,
          std::function<void(std::ostringstream&)>makeMessage) {
   if (logger == 0) {
     return;
@@ -412,7 +412,7 @@ void c5i(SixCatsLogger *logger, const string metaInfo,
   logger->i(metaInfo, makeMessage);
 }
 
-void c5d(SixCatsLogger *logger, const string metaInfo,
+void c6d(SixCatsLogger *logger, const string metaInfo,
          std::function<void(std::ostringstream&)>makeMessage) {
   if (logger == 0) {
     return;
@@ -421,7 +421,7 @@ void c5d(SixCatsLogger *logger, const string metaInfo,
   logger->d(metaInfo, makeMessage);
 }
 
-void c5t(SixCatsLogger *logger, const string metaInfo,
+void c6t(SixCatsLogger *logger, const string metaInfo,
          std::function<void(std::ostringstream&)>makeMessage) {
   if (logger == 0) {
     return;
@@ -430,7 +430,7 @@ void c5t(SixCatsLogger *logger, const string metaInfo,
   logger->t(metaInfo, makeMessage);
 }
 
-void c5f(SixCatsLogger *logger, const string metaInfo,
+void c6f(SixCatsLogger *logger, const string metaInfo,
          std::function<void(std::ostringstream&)>makeMessage) {
   if (logger == 0) {
     return;

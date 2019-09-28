@@ -86,67 +86,67 @@ protected:
 
 // --- -----------------------------------------------------------------------
 
-void c5c(SixCatsLogger    *logger,
+void c6c(SixCatsLogger    *logger,
          const std::string message);
-void c5w(SixCatsLogger    *logger,
+void c6w(SixCatsLogger    *logger,
          const std::string message);
-void c5i(SixCatsLogger    *logger,
+void c6i(SixCatsLogger    *logger,
          const std::string message);
-void c5d(SixCatsLogger    *logger,
+void c6d(SixCatsLogger    *logger,
          const std::string message);
-void c5t(SixCatsLogger    *logger,
+void c6t(SixCatsLogger    *logger,
          const std::string message);
-void c5f(SixCatsLogger    *logger,
-         const std::string message);
-
-void c5c(SixCatsLogger    *logger,
-         const std::string metaInfo,
-         const std::string message);
-void c5w(SixCatsLogger    *logger,
-         const std::string metaInfo,
-         const std::string message);
-void c5i(SixCatsLogger    *logger,
-         const std::string metaInfo,
-         const std::string message);
-void c5d(SixCatsLogger    *logger,
-         const std::string metaInfo,
-         const std::string message);
-void c5t(SixCatsLogger    *logger,
-         const std::string metaInfo,
-         const std::string message);
-void c5f(SixCatsLogger    *logger,
-         const std::string metaInfo,
+void c6f(SixCatsLogger    *logger,
          const std::string message);
 
-void c5c(SixCatsLogger                          *logger,
+void c6c(SixCatsLogger    *logger,
+         const std::string metaInfo,
+         const std::string message);
+void c6w(SixCatsLogger    *logger,
+         const std::string metaInfo,
+         const std::string message);
+void c6i(SixCatsLogger    *logger,
+         const std::string metaInfo,
+         const std::string message);
+void c6d(SixCatsLogger    *logger,
+         const std::string metaInfo,
+         const std::string message);
+void c6t(SixCatsLogger    *logger,
+         const std::string metaInfo,
+         const std::string message);
+void c6f(SixCatsLogger    *logger,
+         const std::string metaInfo,
+         const std::string message);
+
+void c6c(SixCatsLogger                          *logger,
          std::function<void(std::ostringstream&)>makeMessage);
-void c5w(SixCatsLogger                          *logger,
+void c6w(SixCatsLogger                          *logger,
          std::function<void(std::ostringstream&)>makeMessage);
-void c5i(SixCatsLogger                          *logger,
+void c6i(SixCatsLogger                          *logger,
          std::function<void(std::ostringstream&)>makeMessage);
-void c5d(SixCatsLogger                          *logger,
+void c6d(SixCatsLogger                          *logger,
          std::function<void(std::ostringstream&)>makeMessage);
-void c5t(SixCatsLogger                          *logger,
+void c6t(SixCatsLogger                          *logger,
          std::function<void(std::ostringstream&)>makeMessage);
-void c5f(SixCatsLogger                          *logger,
+void c6f(SixCatsLogger                          *logger,
          std::function<void(std::ostringstream&)>makeMessage);
 
-void c5c(SixCatsLogger                          *logger,
+void c6c(SixCatsLogger                          *logger,
          const std::string                       metaInfo,
          std::function<void(std::ostringstream&)>makeMessage);
-void c5w(SixCatsLogger                          *logger,
+void c6w(SixCatsLogger                          *logger,
          const std::string                       metaInfo,
          std::function<void(std::ostringstream&)>makeMessage);
-void c5i(SixCatsLogger                          *logger,
+void c6i(SixCatsLogger                          *logger,
          const std::string                       metaInfo,
          std::function<void(std::ostringstream&)>makeMessage);
-void c5d(SixCatsLogger                          *logger,
+void c6d(SixCatsLogger                          *logger,
          const std::string                       metaInfo,
          std::function<void(std::ostringstream&)>makeMessage);
-void c5t(SixCatsLogger                          *logger,
+void c6t(SixCatsLogger                          *logger,
          const std::string                       metaInfo,
          std::function<void(std::ostringstream&)>makeMessage);
-void c5f(SixCatsLogger                          *logger,
+void c6f(SixCatsLogger                          *logger,
          const std::string                       metaInfo,
          std::function<void(std::ostringstream&)>makeMessage);
 
