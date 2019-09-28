@@ -1,6 +1,7 @@
 #include "MainGameScene.h"
-#include "game/GameMapNode.h"
 
+#include "common/SixCatsLogger.h"
+#include "game/GameMapNode.h"
 
 #include "SimpleAudioEngine.h"
 
@@ -31,7 +32,11 @@ bool MainGameScene::init()
   }
 
   // --- constructor things go here
+  // c6 = make_unique<SixCatsLogger>();
 
+  shared_ptr<SixCatsLogger> tmp_c6(new SixCatsLogger());
+  c6 = tmp_c6;
+  c6->setLogLevel(SixCatsLogger::Debug);
 
   // --- background
   if (!initBackground()) {
@@ -60,11 +65,13 @@ bool MainGameScene::init()
 // --- --------------------------------------------------------------------
 
 bool MainGameScene::initBackground() {
-  log("%s: here", __func__);
+  c6->t(__c6_MN__, "here");
   Sprite *sprite = Sprite::create(backgroundImageFileName);
 
   if (sprite == nullptr) {
-    log("%s: failed to load %s file", __func__, backgroundImageFileName.c_str());
+    c6->c(__c6_MN__, [backgroundImageFileName](ostringstream& ss) {
+      ss << "Failed to load '" << backgroundImageFileName << "'file";
+    });
     return false;
   }
 

@@ -1,8 +1,11 @@
 #pragma once
 
+#include <memory> // unique_ptr, shared_ptr
+
 #include "cocos2d.h"
 
 class GameMapNode;
+class SixCatsLogger;
 
 class MainGameScene : public cocos2d::Scene {
 public:
@@ -27,4 +30,7 @@ protected:
   bool initTiledMap();
 
   bool initDebug();
+
+  // TODO: this should be unique_ptr, but it requires c++14 support
+  std::shared_ptr<SixCatsLogger>c6;
 };
